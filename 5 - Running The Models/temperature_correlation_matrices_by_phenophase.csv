@@ -1,0 +1,21 @@
+"Phenophase","Variable","march_temperature","april_temperature","may_temperature","june_temperature","july_temperature","august_temperature","sept_temperature"
+"Bud","march_temperature","1","","","","",,
+"Bud","april_temperature","0.7","1","","","",,
+"Bud","may_temperature","0.61","0.74*","1","","",,
+"Bud","june_temperature","0.59","0.79*","0.79*","1","",,
+"Bud","july_temperature","0.66","0.77*","0.79*","0.84*","1",,
+"Flower","march_temperature","1","","","","",,
+"Flower","april_temperature","0.72*","1","","","",,
+"Flower","may_temperature","0.63","0.75*","1","","",,
+"Flower","june_temperature","0.62","0.81*","0.81*","1","",,
+"Flower","july_temperature","0.67","0.78*","0.8*","0.84*","1",,
+"Fruit pre-veraison","april_temperature",,"1","","","","",
+"Fruit pre-veraison","may_temperature",,"0.74*","1","","","",
+"Fruit pre-veraison","june_temperature",,"0.76*","0.84*","1","","",
+"Fruit pre-veraison","july_temperature",,"0.75*","0.82*","0.83*","1","",
+"Fruit pre-veraison","august_temperature",,"0.67","0.77*","0.75*","0.83*","1",
+"Fruit post-veraison","may_temperature",,,"1","","","",""
+"Fruit post-veraison","june_temperature",,,"0.79*","1","","",""
+"Fruit post-veraison","july_temperature",,,"0.8*","0.81*","1","",""
+"Fruit post-veraison","august_temperature",,,"0.74*","0.72*","0.79*","1",""
+"Fruit post-veraison","sept_temperature",,,"0.69","0.69","0.74*","0.71*","1"
