@@ -1,15 +1,12 @@
 #Getting numbers for table 2
 
-#Set working directory
-setwd("/Users/migicovskylab/Documents/Vaccinium Paper GitHub Files/5 - Running The Models")
-
 #Load packages
 library(dplyr)
 library(lme4)
 library(lmerTest)
 
 #Import data and select import variables 
-vaccinium <- read.csv("/Users/migicovskylab/Documents/Vaccinium Paper GitHub Files/5 - Running The Models/vaccinium_with_zones_weather_clean.csv")
+vaccinium <- read.csv("./5 - Running The Models/vaccinium_with_zones_weather_clean.csv")
 vaccinium <- vaccinium %>% 
   select(!(X))
 

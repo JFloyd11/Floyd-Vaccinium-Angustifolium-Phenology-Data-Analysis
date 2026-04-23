@@ -1,8 +1,5 @@
 #Cleaning the original datasets 
 
-#Set working directory 
-setwd("/Users/migicovskylab/Documents/Vaccinium Paper GitHub Files/1 - Initial Data Cleaning")
-
 #Load packages
 library(readxl)
 library(dplyr)
@@ -12,7 +9,7 @@ library(lubridate)
 #-------------------------------------------------------------------------------
 #Import and clean the E. C. Smith herbarium data 
 #-------------------------------------------------------------------------------
-ECSmithHerbariumAccessions_PhenologyScoring <- read_excel("ECSmithHerbariumAccessions_PhenologyScoring2.xlsx", 
+ECSmithHerbariumAccessions_PhenologyScoring <- read_excel("./1 - Initial Data Cleaning/ECSmithHerbariumAccessions_PhenologyScoring2.xlsx", 
                                                           col_types = c("text", "text", "text", 
                                                                         "date", "text", "numeric", "text", 
                                                                         "numeric", "text", "text", 
@@ -77,7 +74,7 @@ ECSmith_clean<- ECSmith_clean %>%
 #-------------------------------------------------------------------------------
 #Import and clean the iNaturalist data
 #-------------------------------------------------------------------------------
-angustifolium_photodata <- read_excel("angustifolium_photodata.xlsx")
+angustifolium_photodata <- read_excel("./1 - Initial Data Cleaning/angustifolium_photodata.xlsx")
 
 #Selecting important variables from iNaturalist data
 iNaturalist_data<- angustifolium_photodata %>% 
@@ -137,7 +134,7 @@ iNaturalist_clean<- iNaturalist_clean %>%
 #-------------------------------------------------------------------------------
 #Import and clean online herbarium data
 #-------------------------------------------------------------------------------
-filtered_blueberry_data_1_<- read_excel("filtered_blueberry_data (1).xlsx")
+filtered_blueberry_data_1_<- read_excel("./1 - Initial Data Cleaning/filtered_blueberry_data (1).xlsx")
 
 #Replace NA values
 #Since this runs means there weren't any missing values in the coordinates (still need to check for zeros)
@@ -222,5 +219,5 @@ for (index in 1:length(dates))
 merged_vaccinium$jdate<- julian_dates
 
 #Save merged dataset
-write.csv(merged_vaccinium, "/Users/migicovskylab/Documents/Vaccinium Paper GitHub Files/1 - Initial Data Cleaning/initial_data.csv")
+write.csv(merged_vaccinium, "./1 - Initial Data Cleaning/initial_data.csv")
 #-------------------------------------------------------------------------------

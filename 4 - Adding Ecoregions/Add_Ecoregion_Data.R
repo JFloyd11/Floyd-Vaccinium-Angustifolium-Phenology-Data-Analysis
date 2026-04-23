@@ -1,20 +1,17 @@
 #Add ecoregion data
 
-#Set working directory
-setwd("/Users/migicovskylab/Documents/Vaccinium Paper GitHub Files/4 - Adding Ecoregions")
-
 #Load packages
 library(dplyr)
 library(terra)
 library(lubridate)
 
 #Import blueberry data
-vaccinium_clean_final_dataset <- read.csv("/Users/migicovskylab/Documents/Vaccinium Paper GitHub Files/4 - Adding Ecoregions/vaccinium_with_weather_data_clean.csv")
+vaccinium_clean_final_dataset <- read.csv("./4 - Adding Ecoregions/vaccinium_with_weather_data_clean.csv")
 vaccinium_clean_final_dataset <- vaccinium_clean_final_dataset %>% 
   select(!(X))
 
 #Import ecozone data
-ecozones<- vect("/Users/migicovskylab/Documents/Vaccinium Paper GitHub Files/4 - Adding Ecoregions/Eco_Level2/NA_CEC_Eco_Level2.shp")
+ecozones<- vect("./4 - Adding Ecoregions/Eco_Level2/NA_CEC_Eco_Level2.shp")
 
 #Convert blueberry points to a spatial object
 blueberry_points<- vect(vaccinium_clean_final_dataset, geom = c("decimalLongitude", "decimalLatitude"), crs = "EPSG:4326")
@@ -86,5 +83,5 @@ vaccinium_with_zones<- vaccinium_with_zones %>%
 vaccinium_with_zones <- vaccinium_with_zones %>% mutate(date=make_date(year = 1900, month = month(eventDate), day = day(eventDate)))
 
 #Save new file
-write.csv(vaccinium_with_zones, "/Users/migicovskylab/Documents/Vaccinium Paper GitHub Files/4 - Adding Ecoregions/vaccinium_with_zones_weather_clean.csv")
+write.csv(vaccinium_with_zones, "./4 - Adding Ecoregions/vaccinium_with_zones_weather_clean.csv")
 

@@ -1,24 +1,20 @@
 #Adding temperature data
 
-#Set working directory
-setwd("/Users/migicovskylab/Documents/Vaccinium Paper GitHub Files/3 - Adding Temperature Data")
-
 #Load packages
 library(dplyr)
 library(R.utils)
 library(raster)
 
 #Import dataset and select variables on interest
-merged_vaccinium_clean <- read.csv("clean_data.csv")
-merged_vaccinium_clean <- merged_vaccinium_clean %>% 
-  select(!(X))
+merged_vaccinium_clean <- read.csv("./3 - Adding Temperature Data/clean_data.csv")
+merged_vaccinium_clean <- merged_vaccinium_clean %>% dplyr::select(!(X))
 
 #Convert date column to a date data type
 merged_vaccinium_clean$eventDate<- as.Date(merged_vaccinium_clean$eventDate)
 
 # Unzipping the dataset, the file in this folder is already unzipped so you can
 #skip this step unless it's a fresh download
-gunzip("cru_ts4.08.1901.2023.tmp.dat.nc.gz",
+gunzip("./3 - Adding Temperature Data/cru_ts4.08.1901.2023.tmp.dat.nc.gz",
        remove = TRUE, overwrite = TRUE)
 
 #Import temperature data
@@ -122,5 +118,5 @@ vaccinium2 <- vaccinium %>%
   filter(!is.na (sept_temperature))
 
 #Save data now that temperature data has been added
-write.csv(vaccinium2, "/Users/migicovskylab/Documents/Vaccinium Paper GitHub Files/3 - Adding Temperature Data/vaccinium_with_weather_data_clean.csv")
+write.csv(vaccinium2, "./3 - Adding Temperature Data/vaccinium_with_weather_data_clean.csv")
 

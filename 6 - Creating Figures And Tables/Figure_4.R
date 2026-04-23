@@ -1,8 +1,5 @@
 #Creating Figure 4
 
-#Set working directory
-setwd("/Users/migicovskylab/Documents/Vaccinium Paper GitHub Files/6 - Creating Figures And Tables")
-
 #Load packages
 library(dplyr)
 library(lme4)
@@ -12,7 +9,7 @@ library(cowplot)
 library(ggplot2)
 
 #Import data and select import variables 
-vaccinium <- read.csv("/Users/migicovskylab/Documents/Vaccinium Paper GitHub Files/6 - Creating Figures And Tables/vaccinium_with_zones_weather_clean.csv")
+vaccinium <- read.csv("./6 - Creating Figures And Tables/vaccinium_with_zones_weather_clean.csv")
 vaccinium <- vaccinium %>% 
   select(!(X))
 
