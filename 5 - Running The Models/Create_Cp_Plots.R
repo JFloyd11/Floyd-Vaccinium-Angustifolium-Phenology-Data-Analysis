@@ -1,16 +1,13 @@
 #Creating Cp plots
 
-#Set working directory
-setwd("/Users/migicovskylab/Documents/Vaccinium Paper GitHub Files/5 - Running The Models")
-
 #Load packages
 library(dplyr)
 library(leaps)
 
 #Import data and select important variables
-vaccinium <- read.csv("/Users/migicovskylab/Documents/Vaccinium Paper GitHub Files/5 - Running The Models/vaccinium_with_zones_weather_clean.csv")
+vaccinium <- read.csv("./5 - Running The Models/vaccinium_with_zones_weather_clean.csv")
 vaccinium <- vaccinium %>% 
-  select(!(X))
+  dplyr::select(!(X))
 
 #Separate data
 bud_data<- vaccinium %>% 
@@ -109,3 +106,4 @@ summary(seed_disperseSubsets)
 #Create Cp plot
 plot(seed_disperseSubsets, labels = seed_disperseSubsets$xnames, main ="Seed Dispserse", scale = "Cp")
 #Best seed disperse model includes May, June, and August
+
