@@ -59,7 +59,13 @@ cor_df_all <- bind_rows(
   cor_to_df(cor_mat_flower, "Flower"),
   cor_to_df(cor_mat_fruit, "Fruit pre-veraison"),
   cor_to_df(cor_mat_seed, "Fruit post-veraison")
-)
+) %>%
+  mutate(
+    r = round(r, 3),
+    r2 = round(r^2, 3),
+    `|r| > 0.7` = ifelse(abs(r) > 0.7, "Y", "")
+  )
+
 
 # View results
 print(cor_df_all)
