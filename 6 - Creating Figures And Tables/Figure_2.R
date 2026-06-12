@@ -46,7 +46,7 @@ mean_dates <- pheno_added %>%
   mutate(pheno_num = as.numeric(pheno))
 
 #Create ridge plot
-ggplot(pheno_added, aes(x = date, y = pheno, group = pheno, fill = ..x..)) +
+ridge <- ggplot(pheno_added, aes(x = date, y = pheno, group = pheno, fill = ..x..)) +
   geom_density_ridges_gradient(alpha = 0.7, scale = 1.0) +
   geom_segment(data = mean_dates,
                aes(x = mean_date, xend = mean_date,
@@ -66,3 +66,7 @@ ggplot(pheno_added, aes(x = date, y = pheno, group = pheno, fill = ..x..)) +
   labs(x = "Date",
        y = "Phenological Stage") +
   scale_fill_viridis_c(option = "mako", direction = 1, guide = "none")
+
+pdf("C:/Users/terre/Documents/Acadia/V_angustifolium_paper/Paper/Paper/June 11th Resubmission/Figure2.pdf", width=7.25, height=5)
+ridge
+dev.off()

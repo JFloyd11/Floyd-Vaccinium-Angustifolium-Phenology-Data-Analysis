@@ -84,19 +84,33 @@ all$month <- factor(all$month, levels = c(
 ))
 
 #Order phenology stages through factoring
-all$pheno <- factor(all$pheno, levels = c(
-  "Bud", "Flower", "Fruit pre-veraison", "Fruit post-veraison"))
+all$pheno <- factor(
+  all$pheno,
+  levels = c(
+    "Bud",
+    "Flower",
+    "Fruit pre-veraison",
+    "Fruit post-veraison"
+  ),
+  labels = c(
+    "Bud",
+    "Flower",
+    "Fruit\npre-veraison",
+    "Fruit\npost-veraison"
+  )
+)
 
 #Change date column to a date data type
 all$date<- as.Date(all$date)
 
 #Generate figure 3
-ggplot(all, aes(x = temp, y = jdate)) +
+jdate_temp <- ggplot(all, aes(x = temp, y = jdate)) +
   geom_point(aes(color = date)) +
   geom_smooth(method=lm, se=FALSE, color = 'red') +
   theme_bw() +
   facet_grid(pheno ~ month, scales = "free") +
   scale_color_viridis_c(option = "mako") +
+  scale_x_continuous(breaks = c(-10, -5, 0, 5, 10, 15, 20, 25), n.breaks = 4) +
   scale_y_continuous(breaks = c(1, 32, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335),
                      labels = month.abb) +
   guides(color = "none") +
@@ -110,5 +124,10 @@ ggplot(all, aes(x = temp, y = jdate)) +
     axis.text.x = element_text(size = 12),
     axis.text.y = element_text(size = 12),
     strip.text.x = element_text(size = 14),  # Facet column labels
-    strip.text.y = element_text(size = 14) 
+    strip.text.y = element_text(size = 13) 
   )
+
+pdf("C:/Users/terre/Documents/Acadia/V_angustifolium_paper/Paper/Paper/June 11th Resubmission/Figure3.pdf", width=7.25, height=6)
+jdate_temp
+dev.off()
+

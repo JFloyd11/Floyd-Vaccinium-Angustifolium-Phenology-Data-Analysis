@@ -56,14 +56,14 @@ b<-ggplot(bud, aes(x = year, y = predicted_jdate, color = NA_L2NAME)) +
   geom_line(data = predicted_bud, aes(x = x, y = predicted), color = "red", linewidth = 1.2) +
   #scale_color_manual(name = "Ecozone", values = ecozone_colors) +
   scale_color_manual(values = c(
-    "ATLANTIC HIGHLANDS" = "blueviolet",
-    "CENTRAL USA PLAINS" = "deeppink",
-    "MISSISSIPPI ALLUVIAL AND SOUTHEAST USA COASTAL PLAINS" = "cyan",
-    "MIXED WOOD PLAINS" = "blue",
-    "MIXED WOOD SHIELD" = "darkorange",
-    "OZARK/OUACHITA-APPALACHIAN FORESTS" = "darkgoldenrod2",
-    "SOFTWOOD SHIELD" = "darkgreen",
-    "SOUTHEASTERN USA PLAINS" = "darkolivegreen4"
+    "ATLANTIC HIGHLANDS" = "#A95FBF",
+    "CENTRAL USA PLAINS" = "black",
+    "MISSISSIPPI ALLUVIAL AND SOUTHEAST USA COASTAL PLAINS" = "#009E73",
+    "MIXED WOOD PLAINS" = "#F0E442",
+    "MIXED WOOD SHIELD" = "royalblue",
+    "OZARK/OUACHITA-APPALACHIAN FORESTS" = "#D55E00",
+    "SOFTWOOD SHIELD" = "#CC79A7",
+    "SOUTHEASTERN USA PLAINS" = "#00BFC4"
   ), labels = c(
     "Atlantic highlands",
     "Central USA plains",
@@ -80,7 +80,9 @@ b<-ggplot(bud, aes(x = year, y = predicted_jdate, color = NA_L2NAME)) +
     x = "Year",
     y = "Budding DOY") +
   guides(color = guide_legend(
-    override.aes = list(size = 5)  # Makes legend dots/lines larger
+    ncol = 2,
+    byrow = TRUE,
+    override.aes = list(size = 5)
   )) +
   theme_bw() +
   theme(
@@ -104,14 +106,14 @@ fl<-ggplot(flower, aes(x = year, y = predicted_jdate, color = NA_L2NAME)) +
   geom_line(data = predicted_flower, aes(x = x, y = predicted), color = "red", linewidth = 1.2) +
   #scale_color_manual(values = ecozone_colors) +
   scale_color_manual(values = c(
-    "ATLANTIC HIGHLANDS" = "blueviolet",
-    "CENTRAL USA PLAINS" = "deeppink",
-    "MISSISSIPPI ALLUVIAL AND SOUTHEAST USA COASTAL PLAINS" = "cyan",
-    "MIXED WOOD PLAINS" = "blue",
-    "MIXED WOOD SHIELD" = "darkorange",
-    "OZARK/OUACHITA-APPALACHIAN FORESTS" = "darkgoldenrod2",
-    "SOFTWOOD SHIELD" = "darkgreen",
-    "SOUTHEASTERN USA PLAINS" = "darkolivegreen4"
+    "ATLANTIC HIGHLANDS" = "#A95FBF",
+    "CENTRAL USA PLAINS" = "black",
+    "MISSISSIPPI ALLUVIAL AND SOUTHEAST USA COASTAL PLAINS" = "#009E73",
+    "MIXED WOOD PLAINS" = "#F0E442",
+    "MIXED WOOD SHIELD" = "royalblue",
+    "OZARK/OUACHITA-APPALACHIAN FORESTS" = "#D55E00",
+    "SOFTWOOD SHIELD" = "#CC79A7",
+    "SOUTHEASTERN USA PLAINS" = "#00BFC4"
   ), labels = c(
     "Atlantic highlands",
     "Central USA plains",
@@ -147,14 +149,14 @@ fr<-ggplot(fruit, aes(x = year, y = predicted_jdate, color = NA_L2NAME)) +
   geom_line(data = predicted_fruit, aes(x = x, y = predicted), color = "red", linewidth = 1.2) +
   #scale_color_manual(values = ecozone_colors) +
   scale_color_manual(values = c(
-    "ATLANTIC HIGHLANDS" = "blueviolet",
-    "CENTRAL USA PLAINS" = "deeppink",
-    "MISSISSIPPI ALLUVIAL AND SOUTHEAST USA COASTAL PLAINS" = "cyan",
-    "MIXED WOOD PLAINS" = "blue",
-    "MIXED WOOD SHIELD" = "darkorange",
-    "OZARK/OUACHITA-APPALACHIAN FORESTS" = "darkgoldenrod2",
-    "SOFTWOOD SHIELD" = "darkgreen",
-    "SOUTHEASTERN USA PLAINS" = "darkolivegreen4"
+    "ATLANTIC HIGHLANDS" = "#A95FBF",
+    "CENTRAL USA PLAINS" = "black",
+    "MISSISSIPPI ALLUVIAL AND SOUTHEAST USA COASTAL PLAINS" = "#009E73",
+    "MIXED WOOD PLAINS" = "#F0E442",
+    "MIXED WOOD SHIELD" = "royalblue",
+    "OZARK/OUACHITA-APPALACHIAN FORESTS" = "#D55E00",
+    "SOFTWOOD SHIELD" = "#CC79A7",
+    "SOUTHEASTERN USA PLAINS" = "#00BFC4"
   ), labels = c(
     "Atlantic highlands",
     "Central USA plains",
@@ -169,7 +171,7 @@ fr<-ggplot(fruit, aes(x = year, y = predicted_jdate, color = NA_L2NAME)) +
                      labels = labels_fr) +
   labs(
     x = "Year",
-    y = "Fruit pre-veraison DOY") +
+    y = "Fruit\npre-veraison DOY") +
   theme_bw() +
   theme(
     legend.position = "none",
@@ -190,14 +192,14 @@ sd2<-ggplot(sd, aes(x = year, y = predicted_jdate, color = NA_L2NAME)) +
   geom_line(data = predicted_sd, aes(x = x, y = predicted), color = "red", linewidth = 1.2) +
   #scale_color_manual(values = ecozone_colors) +
   scale_color_manual(values = c(
-    "ATLANTIC HIGHLANDS" = "blueviolet",
-    "CENTRAL USA PLAINS" = "deeppink",
-    "MISSISSIPPI ALLUVIAL AND SOUTHEAST USA COASTAL PLAINS" = "cyan",
-    "MIXED WOOD PLAINS" = "blue",
-    "MIXED WOOD SHIELD" = "darkorange",
-    "OZARK/OUACHITA-APPALACHIAN FORESTS" = "darkgoldenrod2",
-    "SOFTWOOD SHIELD" = "darkgreen",
-    "SOUTHEASTERN USA PLAINS" = "darkolivegreen4"
+    "ATLANTIC HIGHLANDS" = "#A95FBF",
+    "CENTRAL USA PLAINS" = "black",
+    "MISSISSIPPI ALLUVIAL AND SOUTHEAST USA COASTAL PLAINS" = "#009E73",
+    "MIXED WOOD PLAINS" = "#F0E442",
+    "MIXED WOOD SHIELD" = "royalblue",
+    "OZARK/OUACHITA-APPALACHIAN FORESTS" = "#D55E00",
+    "SOFTWOOD SHIELD" = "#CC79A7",
+    "SOUTHEASTERN USA PLAINS" = "#00BFC4"
   ), labels = c(
     "Atlantic highlands",
     "Central USA plains",
@@ -212,7 +214,7 @@ sd2<-ggplot(sd, aes(x = year, y = predicted_jdate, color = NA_L2NAME)) +
                      labels = labels_sd) +
   labs(
     x = "Year",
-    y = "Fruit post-veraison DOY") +
+    y = "Fruit\npost-veraison DOY") +
   theme_bw() +
   theme(
     legend.position = "none",
@@ -228,4 +230,8 @@ b<- b + theme(legend.position = "none")
 
 #Plot figure 4
 plots_combined<- plot_grid(b, fl, fr, sd2, labels = "AUTO", ncol = 2)
-plot_grid(plots_combined, legend, rel_widths = c(1, 0.25))
+
+pdf("C:/Users/terre/Documents/Acadia/V_angustifolium_paper/Paper/Paper/June 11th Resubmission/Figure4.pdf", width=7.25, height=7.75)
+plot_grid(plots_combined, legend, nrow = 2, rel_heights  = c(1, 0.25))
+dev.off()
+

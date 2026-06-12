@@ -63,8 +63,8 @@ map_a<- ggplot() +
   theme(
     axis.text = element_blank(),
     legend.position = c(0.8, 0.25),
-    legend.text = element_text(size = 12),
-    legend.title = element_text(size = 12),
+    legend.text = element_text(size = 10),
+    legend.title = element_text(size = 10),
     axis.ticks = element_blank(),
     axis.title = element_blank(),
     panel.border = element_blank(),
@@ -104,9 +104,9 @@ map_b<- ggplot() +
   theme_minimal() +
   theme(
     axis.text = element_blank(),
-    legend.position = c(0.8, 0.25),
-    legend.text = element_text(size = 12),
-    legend.title = element_text(size = 12),
+    legend.position = c(0.8, 0.23),
+    legend.text = element_text(size = 10),
+    legend.title = element_text(size = 10),
     axis.ticks = element_blank(),
     axis.title = element_blank(),
     panel.border = element_blank(),
@@ -122,7 +122,7 @@ map_a <- map_a + theme(panel.border = element_rect(color = "black", fill = NA, s
 map_b <- map_b + theme(panel.border = element_rect(color = "black", fill = NA, size = 0.2))
 
 #Plot maps one on top of the other
-pdf("Figure1.pdf", width=10, height=6)
+pdf("C:/Users/terre/Documents/Acadia/V_angustifolium_paper/Paper/Paper/June 11th Resubmission/Figure1.pdf", width=7.25, height=7)
 plot_grid(map_a, map_b, labels = NULL, ncol = 1, align = "v", axis = "lr")
 dev.off()
 
